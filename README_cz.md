@@ -38,7 +38,7 @@ Obě metody jsou vyhodnoceny vůči referenčním anotacím KITTI pomocí vlastn
 - **CPU:** libovolný 64bitový procesor (Intel/AMD)
 - **RAM:** minimálně 8 GB (doporučeno 16 GB pro velká mračna bodů)
 - **Disk:** ~50 GB volného místa (KITTI dataset)
-- **GPU:** NVIDIA s podporou CUDA (volitelné — výrazně zrychluje YOLOv8)
+- **GPU:** NVIDIA s podporou CUDA (volitelné - výrazně zrychluje YOLOv8)
 
 ### Software
 
@@ -164,15 +164,15 @@ Pipeline zpracování každého snímku:
 ```
 Načtení dat (snímek + LiDAR + kalibrace)
         │
-        ├── Projekce LiDAR → kamera (Tr_velo_to_cam → R0_rect → P2)
+        ├── Projekce LiDAR -> kamera (Tr_velo_to_cam -> R0_rect -> P2)
         │
-        ├── Detekce kamerou — YOLOv8 na celém snímku
+        ├── Detekce kamerou - YOLOv8 na celém snímku
         │
-        ├── Detekce LiDARem — odstranění vozovky → HDBSCAN shlukování → NMS
+        ├── Detekce LiDARem - odstranění vozovky -> HDBSCAN shlukování -> NMS
         │
-        ├── Decision-level fúze — nezávislé detekce → párování přes IoU + středy → sloučení
+        ├── Decision-level fúze - nezávislé detekce -> párování přes IoU + středy -> sloučení
         │
-        ├── Feature-level fúze — LiDAR shluky → výřez ROI → YOLOv8 na výřezech
+        ├── Feature-level fúze - LiDAR shluky -> výřez ROI -> YOLOv8 na výřezech
         │
         ├── Vyhodnocení přesnosti vs. ground truth (Precision / Recall / F1)
         │
@@ -187,7 +187,7 @@ Načtení dat (snímek + LiDAR + kalibrace)
 
 - Model: YOLOv8n (nano) — `yolov8n.pt` předtrénované váhy (COCO, ~6 MB)
 - Práh confidence: 0.55 (pro minimalizaci FP)
-- Třídy: Car, Pedestrian, Cyclist (mapování COCO → KITTI)
+- Třídy: Car, Pedestrian, Cyclist (mapování COCO -> KITTI)
 - Podpora GPU (CUDA) s automatickým fallbackem na CPU
 
 ### 2. LiDAR (HDBSCAN)
@@ -260,10 +260,10 @@ results/                       # Output files
 
 Projekt využívá KITTI Object Detection Dataset. Data je nutné stáhnout a umístit do složky `DATASET/` s následující strukturou:
 
-1. **data_object_image_2** — barevné snímky levé kamery (`.png`)
-2. **data_object_velodyne** — mračna bodů Velodyne LiDAR (`.bin`, formát float32: x, y, z, intenzita)
-3. **data_object_calib** — kalibrační soubory (projekční matice P0–P3, R0_rect, Tr_velo_to_cam)
-4. **data_object_label_2** — GT anotace (volitelné, pro vyhodnocení přesnosti)
+1. **data_object_image_2** - barevné snímky levé kamery (`.png`)
+2. **data_object_velodyne** - mračna bodů Velodyne LiDAR (`.bin`, formát float32: x, y, z, intenzita)
+3. **data_object_calib** - kalibrační soubory (projekční matice P0-P3, R0_rect, Tr_velo_to_cam)
+4. **data_object_label_2** - GT anotace (volitelné, pro vyhodnocení přesnosti)
 
 Každý soubor má 6místný index (např. `000043.png`, `000043.bin`, `000043.txt`).
 
@@ -271,9 +271,9 @@ Každý soubor má 6místný index (např. `000043.png`, `000043.bin`, `000043.t
 
 Tříkroková transformace 3D souřadnic LiDARu do pixelových souřadnic:
 
-1. **Tr_velo_to_cam** — převod do souřadnicového systému kamery (3×4)
-2. **R0_rect** — rektifikace (vyrovnání os kamer, 3×3)
-3. **P2** — perspektivní projekce na rovinu snímku (3×4, dělení hodnotou Z)
+1. **Tr_velo_to_cam** - převod do souřadnicového systému kamery (3×4)
+2. **R0_rect** - rektifikace (vyrovnání os kamer, 3×3)
+3. **P2** - perspektivní projekce na rovinu snímku (3×4, dělení hodnotou Z)
 
 Maska viditelnosti: bod je považován za viditelný, pokud Z > 0 a souřadnice leží uvnitř hranic snímku (1242 × 375).
 

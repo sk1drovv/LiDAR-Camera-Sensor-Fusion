@@ -1,10 +1,11 @@
+🇨🇿 Česky | [🇬🇧 English](README.md)
 # Senzorová fúze LiDARu a kamery (KITTI Dataset)
 
-**Bakalářská práce** — Analýza metod senzorové fúze LiDARu a kamerového obrazu pro interpretaci scén
+**Bakalářská práce** - Analýza metod senzorové fúze LiDARu a kamerového obrazu pro interpretaci scén
 
 **Autor:** Viacheslav Zlobin
 **Vedoucí:** Ing. Tomáš Klein, Ph.D.
-**VŠB-TUO, FEI** — Automobilové elektronické systémy, 2026
+**VŠB-TUO, FEI** - Automobilové elektronické systémy, 2026
 
 ---
 

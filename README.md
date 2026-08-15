@@ -37,7 +37,7 @@ Both methods are evaluated against KITTI ground-truth annotations using a custom
 - **CPU:** any 64-bit processor (Intel/AMD)
 - **RAM:** 8 GB minimum (16 GB recommended for large point clouds)
 - **Disk:** ~50 GB free space (KITTI dataset)
-- **GPU:** NVIDIA with CUDA support (optional — significantly speeds up YOLOv8)
+- **GPU:** NVIDIA with CUDA support (optional - significantly speeds up YOLOv8)
 
 ### Software
 
@@ -143,7 +143,7 @@ An NVIDIA GPU with CUDA support significantly speeds up YOLOv8 detection. PyTorc
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
 
-GPU detection is automatic — if CUDA is unavailable, the program falls back to CPU without any intervention.
+GPU detection is automatic - if CUDA is unavailable, the program falls back to CPU without any intervention.
 
 ### Troubleshooting
 
@@ -163,15 +163,15 @@ Processing pipeline for each frame:
 ```
 Load data (image + LiDAR + calibration)
         │
-        ├── LiDAR → camera projection (Tr_velo_to_cam → R0_rect → P2)
+        ├── LiDAR -> camera projection (Tr_velo_to_cam -> R0_rect -> P2)
         │
-        ├── Camera detection — YOLOv8 on the full frame
+        ├── Camera detection - YOLOv8 on the full frame
         │
-        ├── LiDAR detection — ground removal → HDBSCAN clustering → NMS
+        ├── LiDAR detection - ground removal -> HDBSCAN clustering -> NMS
         │
-        ├── Decision-level fusion — independent detections → matching via IoU + centres → merge
+        ├── Decision-level fusion - independent detections -> matching via IoU + centres -> merge
         │
-        ├── Feature-level fusion — LiDAR clusters → ROI crop → YOLOv8 on crops
+        ├── Feature-level fusion - LiDAR clusters -> ROI crop -> YOLOv8 on crops
         │
         ├── Accuracy evaluation vs. ground truth (Precision / Recall / F1)
         │
@@ -184,14 +184,14 @@ Load data (image + LiDAR + calibration)
 
 ### 1. Camera (YOLOv8)
 
-- Model: YOLOv8n (nano) — `yolov8n.pt` pretrained weights (COCO, ~6 MB)
+- Model: YOLOv8n (nano) - `yolov8n.pt` pretrained weights (COCO, ~6 MB)
 - Confidence threshold: 0.55 (to minimise false positives)
-- Classes: Car, Pedestrian, Cyclist (COCO → KITTI mapping)
+- Classes: Car, Pedestrian, Cyclist (COCO -> KITTI mapping)
 - GPU (CUDA) support with automatic CPU fallback
 
 ### 2. LiDAR (HDBSCAN)
 
-- Ground point removal by Z height (threshold: −1.4 m)
+- Ground point removal by Z height (threshold: -1.4 m)
 - Voxelisation for clouds above 50,000 points (voxel size: 0.1 m)
 - HDBSCAN clustering with adaptive epsilon based on mean distance
 - Geometric cluster filter: height 0.5–3.5 m; width 0.4–3.0 m; depth 0.5–5.0 m
@@ -259,10 +259,10 @@ results/                       # Output files
 
 The project uses the KITTI Object Detection Dataset. The data must be downloaded and placed in the `DATASET/` folder with the following structure:
 
-1. **data_object_image_2** — colour images from the left camera (`.png`)
-2. **data_object_velodyne** — Velodyne LiDAR point clouds (`.bin`, float32 format: x, y, z, intensity)
-3. **data_object_calib** — calibration files (projection matrices P0–P3, R0_rect, Tr_velo_to_cam)
-4. **data_object_label_2** — ground-truth annotations (optional, required for accuracy evaluation)
+1. **data_object_image_2** - colour images from the left camera (`.png`)
+2. **data_object_velodyne** - Velodyne LiDAR point clouds (`.bin`, float32 format: x, y, z, intensity)
+3. **data_object_calib** - calibration files (projection matrices P0–P3, R0_rect, Tr_velo_to_cam)
+4. **data_object_label_2** - ground-truth annotations (optional, required for accuracy evaluation)
 
 Each file has a six-digit index (e.g. `000043.png`, `000043.bin`, `000043.txt`).
 
@@ -270,9 +270,9 @@ Each file has a six-digit index (e.g. `000043.png`, `000043.bin`, `000043.txt`).
 
 A three-step transformation of 3D LiDAR coordinates into pixel coordinates:
 
-1. **Tr_velo_to_cam** — conversion into the camera coordinate system (3×4)
-2. **R0_rect** — rectification (camera axis alignment, 3×3)
-3. **P2** — perspective projection onto the image plane (3×4, division by Z)
+1. **Tr_velo_to_cam** - conversion into the camera coordinate system (3×4)
+2. **R0_rect** - rectification (camera axis alignment, 3×3)
+3. **P2** - perspective projection onto the image plane (3×4, division by Z)
 
 Visibility mask: a point is considered visible if Z > 0 and its coordinates lie within the image boundaries (1242 × 375).
 

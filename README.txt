@@ -11,6 +11,13 @@
 ======================================================
 ## Požadavky
 ======================================================
+1. Proveďte rešerši současných metod fúze LiDARu a kamerového obrazu zaměřených na interpretaci scén,
+například pro detekci objektů, segmentaci nebo porozumění prostředí.
+2. Popište a analyzujte přístupy k fúzi dat na úrovni vlastností (feature-level) a na úrovni rozhodnutí
+(decision-level), včetně jejich výhod, nevýhod a vhodného použití.
+3. Na poskytnutých nahrávkách ukažte princip fungování vybraných metod fúze a vizuálně nebo analyticky
+porovnejte jejich výsledky.
+4. Vyhodnoťte přesnost, robustnost a vhodnost jednotlivých metod fúze pro interpretaci scén
 
 ------------------------------------------------------
 ### Hardware

@@ -18,6 +18,19 @@
 
 ---
 
+## Přehled
+
+Kamera a LiDAR mají doplňující se slabiny. Kamera dobře klasifikuje objekty, ale nemá přímou informaci o vzdálenosti a zhoršuje se za špatného osvětlení. LiDAR přesně měří geometrii, ale nedokáže rozlišit chodce od sloupu. Senzorová fúze obojí kombinuje - tato práce implementuje dvě strategie fúze a především měří, o kolik každá z nich skutečně pomůže.
+
+**Decision-level fúze** nechá oba senzory detekovat nezávisle a výsledky následně páruje podle překryvu rámečků a blízkosti středů. 
+
+**Feature-level fúze** pracuje sekvenčně: shluky z LiDARu určují oblast zájmu a YOLOv8
+klasifikuje, co se v ní nachází.
+
+Obě metody jsou vyhodnoceny vůči referenčním anotacím KITTI pomocí vlastního vyhodnocovacího frameworku: hladové párování podle IoU s prahem 0,5 a metriky precision, recall a F1 podle třídy objektu i podle vzdálenostního pásma.
+
+**Hlavní zjištění:** fúze celkové F1 oproti samotné kameře výrazně nezlepšila, ale přibližně o třetinu snížila počet falešných detekcí a přidala informaci o vzdálenosti, kterou kamera nemá. U systémů kritických z hlediska bezpečnosti je tato redundance cennější než marginální nárůst přesnosti.
+
 ## Požadavky
 
 ### Hardware

@@ -127,6 +127,7 @@ V `config.py` je nastavena cesta `../Sample_data/DATASET` - odkazuje na přilož
 ### 6. Ověření instalace
 
 ```bash
+cd src
 python main.py
 ```
 
@@ -305,6 +306,7 @@ Soubor `config.py` obsahuje všechny parametry systému:
 ### Hlavní pipeline
 
 ```bash
+cd src
 python main.py
 ```
 
@@ -313,6 +315,7 @@ Program si vyžádá počet snímků ke zpracování (od 1 do maximálního poč
 ### Analýza citlivosti
 
 ```bash
+cd src
 python sensitivity_analysis.py
 ```
 
@@ -337,6 +340,7 @@ Doba běhu: cca 15–30 min na GPU. Pro rychlý test lze v hlavičce skriptu sn�
 ### Validace geometrického filtru
 
 ```bash
+cd src
 python analyze_gt_sizes.py
 ```
 

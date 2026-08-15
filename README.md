@@ -1,10 +1,10 @@
-# LiDAR–Camera Sensor Fusion (KITTI Dataset)
+# LiDAR-Camera Sensor Fusion (KITTI Dataset)
 
-**Bachelor's Thesis** — Analysis of LiDAR and Camera Sensor Fusion Methods for Scene Interpretation
+**Bachelor's Thesis** - Analysis of LiDAR and Camera Sensor Fusion Methods for Scene Interpretation
 
 **Author:** Viacheslav Zlobin
 **Supervisor:** Ing. Tomáš Klein, Ph.D.
-**VŠB-TUO, FEI** — Automotive Electronic Systems, 2026
+**VŠB-TUO, FEI** - Automotive Electronic Systems, 2026
 
 ---
 
@@ -304,11 +304,11 @@ Parameter groups examined:
 
 | Group | Parameter | Values examined |
 |---|---|---|
-| A | `match_score` weights (IoU / centres) | 0.5/0.5, 0.6/0.4, 0.7/0.3 |
-| B | matching threshold | 0.10, 0.15, 0.20, 0.25, 0.30 |
+| A | `match_score` weights (IoU / centres) | 0.5/0.5; 0.6/0.4; 0.7/0.3 |
+| B | matching threshold | 0.10; 0.15; 0.20; 0.25; 0.30 |
 | C | centre distance normalisation | 100, 150, 200 px |
-| D | confidence weights (camera / LiDAR) | 0.5/0.5, 0.6/0.4, 0.7/0.3, 0.8/0.2 |
-| E | ground removal threshold | −1.2, −1.4, −1.6 m |
+| D | confidence weights (camera / LiDAR) | 0.5/0.5; 0.6/0.4; 0.7/0.3; 0.8/0.2 |
+| E | ground removal threshold | −1.2 m; −1.4 m , −1.6 m |
 
 Output:
 - console log with F1/P/R and a summary table of deviations from the baseline

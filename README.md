@@ -28,7 +28,7 @@ Camera and LiDAR have complementary weaknesses. A camera classifies objects well
 
 Both methods are evaluated against KITTI ground-truth annotations using a custom evaluation framework: greedy matching by IoU at a 0.5 threshold, with precision, recall and F1 reported per object class and per distance range.
 
-**Key finding:** fusion did not substantially outperform the camera alone onoverall F1, but it reduced false positives by roughly a third and addeddistance information the camera  cannot provide. For safety-critical systems, that redundancy matters more than a marginal accuracy gain.
+**Key finding:** fusion did not substantially outperform the camera alone overall F1, but it reduced false positives by roughly a third and added distance information the camera  cannot provide.
 
 ## Requirements
 

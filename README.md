@@ -126,6 +126,7 @@ DATASET/
 ### 6. Verify the installation
 
 ```bash
+cd src
 python main.py
 ```
 

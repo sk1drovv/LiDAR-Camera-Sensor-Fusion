@@ -315,8 +315,16 @@ All scripts are run from the `src/` directory, since the paths in `config.py` ar
 cd src
 python main.py
 ```
-
 The program asks for the number of frames to process (from 1 up to the maximum available). The output is a console log with a progress indicator, accuracy tables and files in the `results/` folder.
+
+### Tests
+
+```bash
+pip install pytest
+pytest
+```
+
+Unit tests cover the evaluation framework in `src/analysis.py`: IoU computation, distance binning and the aggregation of TP/FP/FN into precision, recall and F1.
 
 ### Sensitivity analysis
 

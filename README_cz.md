@@ -2,11 +2,11 @@
 
 # Senzorová fúze LiDARu a kamery (KITTI Dataset)
 
-**Bakalářská práce** — Analýza metod senzorové fúze LiDARu a kamerového obrazu pro interpretaci scén
+**Bakalářská práce** - Analýza metod senzorové fúze LiDARu a kamerového obrazu pro interpretaci scén
 
 **Autor:** Viacheslav Zlobin
 **Vedoucí:** Ing. Tomáš Klein, Ph.D.
-**VŠB-TUO, FEI** — Automobilové elektronické systémy, 2026
+**VŠB-TUO, FEI** - Automobilové elektronické systémy, 2026
 
 ---
 
@@ -315,8 +315,16 @@ Všechny skripty se spouštějí ze složky `src/`, protože cesty v `config.py`
 cd src
 python main.py
 ```
-
 Program si vyžádá počet snímků ke zpracování (od 1 do maximálního počtu dostupných). Výstupem je konzolový výpis s ukazatelem průběhu, tabulky přesnosti a soubory ve složce `results/`.
+
+### Testy
+
+```bash
+pip install pytest
+pytest
+```
+
+Jednotkové testy pokrývají vyhodnocovací framework v `src/analysis.py`: výpočet IoU, rozdělení do vzdálenostních pásem a agregaci TP/FP/FN do metrik precision, recall a F1.
 
 ### Analýza citlivosti
 

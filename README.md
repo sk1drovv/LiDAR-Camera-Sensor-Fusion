@@ -10,7 +10,7 @@
 
 ## Objectives
 
-1. Review current LiDAR–camera fusion methods aimed at scene interpretation, such as object detection, segmentation and environment understanding.
+1. Review current LiDAR-camera fusion methods aimed at scene interpretation, such as object detection, segmentation and environment understanding.
 2. Describe and analyse feature-level and decision-level fusion approaches, including their advantages, drawbacks and suitable applications.
 3. Demonstrate the principle of the selected fusion methods on the provided recordings and compare their results visually and analytically.
 4. Evaluate the accuracy, robustness and suitability of each fusion method for scene interpretation.

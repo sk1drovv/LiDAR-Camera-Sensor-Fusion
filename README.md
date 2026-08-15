@@ -2,11 +2,11 @@ English | [Česky](README_cz.md)
 
 # LiDAR-Camera Sensor Fusion (KITTI Dataset)
 
-**Bachelor's Thesis** — Analysis of LiDAR and Camera Sensor Fusion Methods for Scene Interpretation
+**Bachelor's Thesis** - Analysis of LiDAR and Camera Sensor Fusion Methods for Scene Interpretation
 
 **Author:** Viacheslav Zlobin
 **Supervisor:** Ing. Tomáš Klein, Ph.D.
-**VŠB-TUO, FEI** — Automotive Electronic Systems, 2026
+**VŠB-TUO, FEI** - Automotive Electronic Systems, 2026
 
 ---
 

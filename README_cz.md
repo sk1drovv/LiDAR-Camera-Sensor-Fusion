@@ -346,7 +346,7 @@ Výstup (pouze konzole):
 - statistika rozměrů pro každou třídu (min/max/mean, p5/p95)
 - procento objektů splňujících všechny meze filtru
 
-Doba běhu: cca 5–10 s (bez GPU).
+Doba běhu: cca 5-10 s (bez GPU).
 
 ---
 

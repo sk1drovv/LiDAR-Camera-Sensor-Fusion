@@ -182,7 +182,7 @@ Načtení dat (snímek + LiDAR + kalibrace)
 - Odstranění bodů vozovky podle výšky Z (práh: −1,4 m)
 - Voxelizace pro mračna nad 50 000 bodů (velikost voxelu: 0,1 m)
 - Shlukování HDBSCAN s adaptivním epsilon na základě průměrné vzdálenosti
-- Geometrický filtr shluků: výška 0,5–3,5 m, šířka 0,4–3,0 m, hloubka 0,5–5,0 m
+- Geometrický filtr shluků: výška 0,5–3,5 m; šířka 0,4–3,0 m; hloubka 0,5–5,0 m
 - Filtr hustoty bodů (> 5 bodů/m³)
 - Non-Maximum Suppression (NMS) pro odstranění duplicit
 
@@ -305,11 +305,11 @@ Zkoumané skupiny parametrů:
 
 | Skupina | Parametr | Zkoumané hodnoty |
 |---|---|---|
-| A | váhy `match_score` (IoU / středy) | 0,5/0,5, 0,6/0,4, 0,7/0,3 |
-| B | práh párování | 0,10, 0,15, 0,20, 0,25, 0,30 |
+| A | váhy `match_score` (IoU / středy) | 0,5/0,5; 0,6/0,4; 0,7/0,3 |
+| B | práh párování | 0,10; 0,15; 0,20; 0,25; 0,30 |
 | C | normalizace vzdálenosti středů | 100, 150, 200 px |
 | D | váhy confidence (kamera / LiDAR) | 0,5/0,5, 0,6/0,4, 0,7/0,3, 0,8/0,2 |
-| E | práh odstranění vozovky | −1,2, −1,4, −1,6 m |
+| E | práh odstranění vozovky | −1,2 m; −1,4 m; −1,6 m |
 
 Výstup:
 - konzolový výpis F1/P/R a souhrnná tabulka odchylek od baseline
@@ -323,7 +323,7 @@ Doba běhu: cca 15–30 min na GPU. Pro rychlý test lze v hlavičce skriptu sn�
 python analyze_gt_sizes.py
 ```
 
-Měří skutečné 3D rozměry GT objektů v KITTI a ověřuje, jaký podíl objektů splňuje meze filtru `filter_cluster()` (h: 0,5–3,5 m, w: 0,4–3,0 m, d: 0,5–5,0 m).
+Měří skutečné 3D rozměry GT objektů v KITTI a ověřuje, jaký podíl objektů splňuje meze filtru `filter_cluster()` (h: 0,5–3,5 m; w: 0,4–3,0 m; d: 0,5–5,0 m).
 
 Výstup (pouze konzole):
 - statistika rozměrů pro každou třídu (min/max/mean, p5/p95)

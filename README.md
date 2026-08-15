@@ -1,4 +1,4 @@
-🇬🇧 English | [🇨🇿 Česky](README_cz.md)
+English | [Česky](README_cz.md)
 
 # LiDAR-Camera Sensor Fusion (KITTI Dataset)
 

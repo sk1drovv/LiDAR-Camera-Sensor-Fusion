@@ -1,4 +1,4 @@
-[🇬🇧 English](README.md) | 🇨🇿 Česky
+[English](README.md) | Česky
 
 # Senzorová fúze LiDARu a kamery (KITTI Dataset)
 

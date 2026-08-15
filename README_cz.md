@@ -122,7 +122,7 @@ DATASET/
 └── data_object_label_2/training/label_2/*.txt
 ```
 
-V `config.py` je nastavena cesta `../Sample_data/DATASET` — odkazuje na přiložený mini-dataset 10 snímků pro demonstraci. Pro vlastní plný KITTI dataset upravte `KITTI_DATA_PATH` a `KITTI_TRAINING_PATH` na cestu k vaší kopii KITTI.
+V `config.py` je nastavena cesta `../Sample_data/DATASET` - odkazuje na přiložený mini-dataset 10 snímků pro demonstraci. Pro vlastní plný KITTI dataset upravte `KITTI_DATA_PATH` a `KITTI_TRAINING_PATH` na cestu k vaší kopii KITTI.
 
 ### 6. Ověření instalace
 
@@ -144,7 +144,7 @@ Pro výrazné zrychlení detekce YOLOv8 lze využít NVIDIA GPU s podporou CUDA.
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
 
-Detekce GPU probíhá automaticky — pokud CUDA není dostupná, program se vrátí na CPU bez nutnosti zásahu.
+Detekce GPU probíhá automaticky - pokud CUDA není dostupná, program se vrátí na CPU bez nutnosti zásahu.
 
 ### Řešení častých problémů
 
@@ -267,7 +267,7 @@ Projekt využívá KITTI Object Detection Dataset. Data je nutné stáhnout a um
 
 Každý soubor má 6místný index (např. `000043.png`, `000043.bin`, `000043.txt`).
 
-### Projekce LiDAR → kamera
+### Projekce LiDAR -> kamera
 
 Tříkroková transformace 3D souřadnic LiDARu do pixelových souřadnic:
 

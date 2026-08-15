@@ -185,7 +185,7 @@ Načtení dat (snímek + LiDAR + kalibrace)
 
 ### 1. Kamera (YOLOv8)
 
-- Model: YOLOv8n (nano) — `yolov8n.pt` předtrénované váhy (COCO, ~6 MB)
+- Model: YOLOv8n (nano) - `yolov8n.pt` předtrénované váhy (COCO, ~6 MB)
 - Práh confidence: 0.55 (pro minimalizaci FP)
 - Třídy: Car, Pedestrian, Cyclist (mapování COCO -> KITTI)
 - Podpora GPU (CUDA) s automatickým fallbackem na CPU

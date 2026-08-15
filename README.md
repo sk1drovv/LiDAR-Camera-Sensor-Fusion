@@ -71,7 +71,7 @@ Extract the project source files into any folder, for example:
 D:\Python\sensor_fusion_kitti\
 ```
 
-This folder should contain `main.py`, `config.py`, `data_loader.py`, `fusion_methods.py`, `visualization.py`, `analysis.py`, `requirements.txt` and the remaining files.
+This folder should contain `main.py`, `config.py`, `data_loader.py`, `fusion_methods.py`, `visualization.py`, `analysis.py`, `requirements.txt` and the src/ directory with the Python modules.
 
 ### 2. Virtual environment (recommended)
 

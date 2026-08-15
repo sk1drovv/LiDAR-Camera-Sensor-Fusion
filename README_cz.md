@@ -303,6 +303,8 @@ Soubor `config.py` obsahuje všechny parametry systému:
 
 ## Spuštění
 
+- Všechny skripty se spouštějí ze složky src/, protože cesty v config.py jsou relativní k ní
+
 ### Hlavní pipeline
 
 ```bash

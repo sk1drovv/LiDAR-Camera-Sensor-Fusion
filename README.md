@@ -20,25 +20,14 @@
 
 ## Overview
 
-Camera and LiDAR have complementary weaknesses. A camera classifies objects
-well but has no direct depth information and degrades in poor lighting.
-LiDAR measures geometry precisely but cannot tell a pedestrian from a post.
-Sensor fusion combines both - this project implements two fusion strategies
-and, more importantly, measures how much each one actually helps.
+Camera and LiDAR have complementary weaknesses. A camera classifies objects well but has no direct depth information and degrades in poor lighting. LiDAR measures geometry precisely but cannot tell a pedestrian from a post. Sensor fusion combines both - this project implements two fusion strategies and, more importantly, measures how much each one actually helps.
 
-**Decision-level fusion** lets both sensors detect independently, then matches
-the results by bounding-box overlap and centre proximity. **Feature-level
-fusion** works sequentially instead: LiDAR clusters define where to look, and
-YOLOv8 classifies what is inside each region.
+**Decision-level fusion** lets both sensors detect independently, then matches the results by bounding-box overlap and centre proximity. 
+**Feature-level fusion** works sequentially instead: LiDAR clusters define where to look, and YOLOv8 classifies what is inside each region.
 
-Both methods are evaluated against KITTI ground-truth annotations using a
-custom evaluation framework: greedy matching by IoU at a 0.5 threshold, with
-precision, recall and F1 reported per object class and per distance range.
+Both methods are evaluated against KITTI ground-truth annotations using a custom evaluation framework: greedy matching by IoU at a 0.5 threshold, with precision, recall and F1 reported per object class and per distance range.
 
-**Key finding:** fusion did not substantially outperform the camera alone on
-overall F1, but it reduced false positives by roughly a third and added
-distance information the camera cannot provide. For safety-critical systems,
-that redundancy matters more than a marginal accuracy gain.
+**Key finding:** fusion did not substantially outperform the camera alone onoverall F1, but it reduced false positives by roughly a third and addeddistance information the camera  cannot provide. For safety-critical systems, that redundancy matters more than a marginal accuracy gain.
 
 ## Requirements
 

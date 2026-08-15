@@ -72,7 +72,7 @@ Rozbalte zdrojové soubory projektu do libovolné složky, např.:
 D:\Python\sensor_fusion_kitti\
 ```
 
-V této složce by měly být soubory `main.py`, `config.py`, `data_loader.py`, `fusion_methods.py`, `visualization.py`, `analysis.py`, `requirements.txt` a další.
+V této složce by měly být soubory `main.py`, `config.py`, `data_loader.py`, `fusion_methods.py`, `visualization.py`, `analysis.py`, `requirements.txt` a složku src/ s moduly v Python.
 
 ### 2. Vytvoření virtuálního prostředí (doporučeno)
 

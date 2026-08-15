@@ -301,9 +301,12 @@ Visibility mask: a point is considered visible if Z > 0 and its coordinates lie 
 
 ## Running the project
 
+- All scripts are run from the src/ directory, since paths in config.py are relative to it.
+
 ### Main pipeline
 
 ```bash
+cd src
 python main.py
 ```
 
@@ -312,6 +315,7 @@ The program asks for the number of frames to process (from 1 up to the maximum a
 ### Sensitivity analysis
 
 ```bash
+cd src
 python sensitivity_analysis.py
 ```
 
@@ -331,11 +335,12 @@ Output:
 - console log with F1/P/R and a summary table of deviations from the baseline
 - `sensitivity_results.csv`
 
-Runtime: approx. 15–30 min on GPU. For a quick test, lower `N_FRAMES` to 100 in the script header.
+Runtime: approx. 15-30 min on GPU. For a quick test, lower `N_FRAMES` to 100 in the script header.
 
 ### Geometric filter validation
 
 ```bash
+cd src
 python analyze_gt_sizes.py
 ```
 

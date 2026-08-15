@@ -220,33 +220,37 @@ Load data (image + LiDAR + calibration)
 ## Project structure
 
 ```
-sensor_fusion_kitti/
+LiDAR-Camera-Sensor-Fusion/
 │
-├── main.py                    # Main pipeline: loading → detection → fusion → evaluation → visualisation
-├── config.py                  # Configuration: paths, parameters, method switches
-├── data_loader.py             # KITTI data loader (images, LiDAR, calibration, ground truth)
-├── fusion_methods.py          # Fusion method implementations (decision + feature)
-├── visualization.py           # Visualisation: six-panel comparison plots
-├── analysis.py                # Accuracy evaluation: TP/FP/FN, precision/recall/F1 by class and distance
-├── sensitivity_analysis.py    # Parameter sensitivity analysis for decision fusion
-├── analyze_gt_sizes.py        # Geometric filter validation against real ground-truth dimensions
-├── yolov8n.pt                 # Pretrained YOLOv8 nano weights (COCO, ~6 MB)
-├── requirements.txt           # Python dependencies
-├── __init__.py                # Package version (1.0.0)
+├── README.md                      # Documentation (English)
+├── README_cz.md                   # Documentation (Czech)
+├── requirements.txt               # Python dependencies
 │
-├── DATASET/                                          # KITTI dataset (standard structure)
-│   ├── data_object_image_2/training/image_2/         # PNG camera images
-│   ├── data_object_velodyne/training/velodyne/       # Binary LiDAR files (.bin)
-│   ├── data_object_calib/training/calib/             # Calibration matrices (.txt)
-│   └── data_object_label_2/training/label_2/         # Ground-truth annotations (.txt)
-│
-├── results/                       # Output files
-│   ├── result_frame_XXXXXX.png    # Six-panel visualisations
-│   ├── statistics.csv             # Per-frame statistics
-│   ├── metrics.csv                # P/R/F1 metrics (method × class × distance)
-│   └── report.txt                 # Text report
-│
-└── sensitivity_results.csv        # Sensitivity analysis results
+└── src/
+    ├── main.py                    # Main pipeline: loading -> detection -> fusion -> evaluation -> visualisation
+    ├── config.py                  # Configuration: paths, parameters, method switches
+    ├── data_loader.py             # KITTI data loader (images, LiDAR, calibration, ground truth)
+    ├── fusion_methods.py          # Fusion method implementations (decision + feature)
+    ├── visualization.py           # Visualisation: six-panel comparison plots
+    ├── analysis.py                # Accuracy evaluation: TP/FP/FN, precision/recall/F1 by class and distance
+    ├── sensitivity_analysis.py    # Parameter sensitivity analysis for decision fusion
+    ├── analyze_gt_sizes.py        # Geometric filter validation against ground-truth dimensions
+    ├── yolov8n.pt                 # Pretrained YOLOv8 nano weights (COCO, ~6 MB)
+    └── __init__.py                # Package version (1.0.0)
+
+Created at runtime (not in the repository):
+
+DATASET/                                          # KITTI dataset - download separately
+├── data_object_image_2/training/image_2/         # PNG camera images
+├── data_object_velodyne/training/velodyne/       # Binary LiDAR files (.bin)
+├── data_object_calib/training/calib/             # Calibration matrices (.txt)
+└── data_object_label_2/training/label_2/         # Ground-truth annotations (.txt)
+
+results/                       # Output files
+├── result_frame_XXXXXX.png    # Six-panel visualisations
+├── statistics.csv             # Per-frame statistics
+├── metrics.csv                # P/R/F1 metrics (method × class × distance)
+└── report.txt                 # Text report
 ```
 
 ---

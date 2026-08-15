@@ -266,7 +266,7 @@ The project uses the KITTI Object Detection Dataset. The data must be downloaded
 
 Each file has a six-digit index (e.g. `000043.png`, `000043.bin`, `000043.txt`).
 
-### LiDAR → camera projection
+### LiDAR -> camera projection
 
 A three-step transformation of 3D LiDAR coordinates into pixel coordinates:
 
@@ -345,7 +345,7 @@ Output (console only):
 - dimension statistics for each class (min/max/mean, p5/p95)
 - percentage of objects satisfying all filter limits
 
-Runtime: approx. 5–10 s (no GPU required).
+Runtime: approx. 5-10 s (no GPU required).
 
 ---
 

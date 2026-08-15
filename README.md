@@ -182,7 +182,7 @@ Load data (image + LiDAR + calibration)
 - Ground point removal by Z height (threshold: −1.4 m)
 - Voxelisation for clouds above 50,000 points (voxel size: 0.1 m)
 - HDBSCAN clustering with adaptive epsilon based on mean distance
-- Geometric cluster filter: height 0.5–3.5 m, width 0.4–3.0 m, depth 0.5–5.0 m
+- Geometric cluster filter: height 0.5–3.5 m; width 0.4–3.0 m; depth 0.5–5.0 m
 - Point density filter (> 5 points/m³)
 - Non-Maximum Suppression (NMS) to remove duplicates
 
